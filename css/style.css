@@ -1,0 +1,96 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+body {
+    font-family: 'Poppins';
+    --main-purple: 	#663b94;
+    --accent-purple: #9c55e9;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    gap: 6rem;
+}
+
+#kanji-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    /* display: grid;
+    place-content: center;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 0.75rem */
+}
+
+#kanji-search {
+    font-size: 1.5rem;
+    padding: 0.4rem;
+    border: none;
+    border-bottom: 2px solid var(--accent-purple);
+    outline: none;
+}
+
+#search-button {
+    padding: 0.5em 3em;
+    font-family: 'Poppins';
+    border: none;
+    box-shadow: 0 1px 6px hsl(0deg 0% 0% / 0.3);
+    cursor: pointer;
+    align-self: center;
+    border-radius: 0.2rem;
+    /* border-radius: 2rem; */
+    /* padding: 1em, 4em; */
+}
+
+#search-button:hover {
+    box-shadow: 0 1px 6px hsl(0deg 0% 0% / 0.5);
+    transition: 0.2s ease-in-out;
+}
+
+.kanji-container {
+    display: flex;
+}
+
+/* Kanji displayed from api */
+.big-kanji {
+    font-size: 10rem;
+    font-weight: 500;
+    color: white;
+}
+
+.kanji-image {
+    background-color: var(--main-purple);
+    text-align: center;
+    padding: 2rem 6rem;
+    position: relative;
+    border-radius: 0.3rem;
+    box-shadow: 0 1px 6px hsl(0deg 0% 0% / 0.3);
+}
+
+.kanji-header {
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    border-bottom-left-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+    padding: 0.5rem;
+}
+
+
