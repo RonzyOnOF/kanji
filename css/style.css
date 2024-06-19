@@ -16,6 +16,7 @@ body {
     font-family: 'Poppins';
     --main-purple: 	#663b94;
     --accent-purple: #9c55e9;
+    --subtle-shadow: 0 1px 6px hsl(0deg 0% 0% / 0.3);
 }
 
 .main-container {
@@ -31,10 +32,6 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    /* display: grid;
-    place-content: center;
-    grid-template-rows: repeat(4, 1fr);
-    gap: 0.75rem */
 }
 
 #kanji-search {
@@ -53,8 +50,6 @@ body {
     cursor: pointer;
     align-self: center;
     border-radius: 0.2rem;
-    /* border-radius: 2rem; */
-    /* padding: 1em, 4em; */
 }
 
 #search-button:hover {
@@ -62,8 +57,10 @@ body {
     transition: 0.2s ease-in-out;
 }
 
-.kanji-container {
-    display: flex;
+.kanji-image-container {
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: var(--subtle-shadow);
 }
 
 /* Kanji displayed from api */
@@ -71,26 +68,15 @@ body {
     font-size: 10rem;
     font-weight: 500;
     color: white;
-}
-
-.kanji-image {
     background-color: var(--main-purple);
-    text-align: center;
-    padding: 2rem 6rem;
-    position: relative;
-    border-radius: 0.3rem;
-    box-shadow: 0 1px 6px hsl(0deg 0% 0% / 0.3);
+    padding: 5rem 10rem;
 }
 
 .kanji-header {
-    background-color: white;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    left: 0;
-    border-bottom-left-radius: 0.3rem;
-    border-bottom-right-radius: 0.3rem;
-    padding: 0.5rem;
+    text-align: center;
+    font-size: 1.4rem;
+    text-transform: capitalize;
+    padding: 0.3rem;
 }
 
 
