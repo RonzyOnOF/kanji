@@ -26,6 +26,14 @@ body {
     justify-content: center;
     min-height: 100vh;
     gap: 6rem;
+    /* padding: 0 5rem; */
+}
+
+.kanji-container {
+    display: flex;
+    gap: 3rem;
+    width: max(800px, 65%);
+    /* width: 65%; */
 }
 
 #kanji-form {
@@ -61,6 +69,7 @@ body {
     border-radius: 0.5rem;
     overflow: hidden;
     box-shadow: var(--subtle-shadow);
+    flex-basis: 100%;
 }
 
 /* Kanji displayed from api */
@@ -70,13 +79,32 @@ body {
     color: white;
     background-color: var(--main-purple);
     padding: 5rem 10rem;
+    text-align: center;
+    margin: auto;
 }
+
 
 .kanji-header {
     text-align: center;
     font-size: 1.4rem;
     text-transform: capitalize;
     padding: 0.3rem;
+}
+
+.kanji-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    flex-basis: 100%;
+}
+
+.card-container {
+    background-color: rgb(247, 244, 244);
+    box-shadow: var(--subtle-shadow);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 

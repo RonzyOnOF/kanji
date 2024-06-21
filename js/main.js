@@ -1,5 +1,12 @@
 import { fetchKanji } from './api.js';
-import { createElement } from './utils.js';
+import { createElement, removeExistingElements } from './utils.js';
+import { createCard } from './components/card.js';
+
+// Work on adding text inside cards like 'stroke count: '
+// fix centering of big kanji
+// equal height of cards
+// mobile responsiveness
+
 
 const kanjiForm = document.getElementById('kanji-form');
 // stores image kanji
@@ -20,6 +27,7 @@ function addKanji(kanji, meaning) {
 
 function removeKanji() {
     const existingKanji = kanjiContainer.lastChild;
+    // refactor this code using removeExistingElements()
     if (existingKanji) {
         while (kanjiContainer.firstChild) {
             kanjiContainer.removeChild(kanjiContainer.firstChild);
@@ -36,12 +44,16 @@ async function handleSubmit(e) {
         console.log('Input is empty');
         return;
     } else {
+        removeExistingElements(kanjiInfo);
         const kanjiData = await fetchKanji(kanjiLookup.value);
         console.log(kanjiData);
         kanjiLookup.value = '';
-        const { kanji, heisig_en, kun_reading, on_readings, stroke_count } = kanjiData;
+        const { kanji, heisig_en, kun_readings, on_readings, stroke_count, jlpt } = kanjiData;
         addKanji(kanji, heisig_en);
-
+        kanjiInfo.appendChild(createCard(on_readings));
+        kanjiInfo.appendChild(createCard(kun_readings));
+        kanjiInfo.appendChild(createCard(stroke_count));
+        kanjiInfo.appendChild(createCard(jlpt));
     }
 }
 
